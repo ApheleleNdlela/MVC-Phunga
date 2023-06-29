@@ -9,12 +9,15 @@
     "nodemon": "^2.0.22"
   },
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "name": "phunga-app",
   "version": "1.0.0",
   "main": "index.js",
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "engines": {
+    "node":"18.x"
+  }
 }
