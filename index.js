@@ -25,7 +25,9 @@ db.mongoose.connect(DB.db_url, {
   .catch((err) => {
     console.log("Error connecting to the database: " + err);
   });
-
+app.get("/", (req,res)=>{
+  res.send(`Hello world`)
+})
 // initRoutes(app);
 require("./routes/item.routes")(app)
 require("./routes/auth.routes")(app);
