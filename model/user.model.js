@@ -6,14 +6,10 @@ const User = mongoose.model(
    
    
     new mongoose.Schema({
-    username: {
-        type: String
-        },
-    email: { String
-    },
-    password:{
-        type: String
-    },
+    username: String,
+    email: String,
+    password: String,
+    
     roles: [
         {
             type: mongoose.Schema.Types.ObjectId,

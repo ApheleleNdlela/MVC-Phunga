@@ -6,13 +6,15 @@ const app = express();
 
 const PORT = process.env.PORT;
 
-const DB = require("./config/db.config");
-const db = require("./model");
-const Role = db.role;
 
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
+
+const DB = require("./config/db.config");
+const db = require("./model");
+const Role = db.role;
+
 
 db.mongoose.connect(DB.db_url, {
   useNewUrlParser: true,
@@ -32,10 +34,6 @@ app.get("/", (req,res)=>{
 require("./routes/item.routes")(app)
 require("./routes/auth.routes")(app);
 require("./routes/user.routes")(app);
-
-app.listen(PORT, () => {
-  console.log(`Server is running at port ${PORT}.`);
-});
 
 function initial() {
   Role.estimatedDocumentCount((err, count) => {
@@ -62,6 +60,12 @@ function initial() {
     }
   });
 }
+
+app.listen(PORT, () => {
+  console.log(`Server is running at port ${PORT}.`);
+});
+
+
 
 
   
