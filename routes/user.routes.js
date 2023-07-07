@@ -13,10 +13,10 @@ module.exports = function(app) {
         next();
     });
 
-    router.get("/", [authJwt.verifyToken], controller.userBoard);
-    router.get("/", [authJwt.isAdmin],controller.adminBoard);    
-    router.get("/", controller.allAccess);
-
+    router.get("/1", [authJwt.verifyToken], controller.userBoard);
+    router.get("/2", [authJwt.isAdmin],controller.adminBoard);    
+    router.get("/3", controller.allAccess);
+    router.get("/", controller.findAll)
     app.use('/v2/users/',router);
 
 

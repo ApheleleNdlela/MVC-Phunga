@@ -14,6 +14,10 @@ exports.adminBoard = (req, res) => {
     res.status(200).send('Admin Content.');
 }
 
+exports.findAll = (req, res) => {
+
+    User.find().then(data => res.send(data))
+}
 
 
 
