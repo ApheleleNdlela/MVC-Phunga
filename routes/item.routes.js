@@ -9,6 +9,6 @@ module.exports = rs =>{
     router.delete('/:id', controller.deleteOne)
     router.get('/:id', controller.getOne)
 
-rs.use('/api/items',router);
+rs.use('/v1/items',router);
 
 }
