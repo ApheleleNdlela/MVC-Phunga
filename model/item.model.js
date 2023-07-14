@@ -17,7 +17,10 @@ module.exports= mongoose=>{
         type: String
     },
     quantity: {
-        type: Number
+
+        type: Number,
+        require: true,
+        default: 1
     }
 
 
