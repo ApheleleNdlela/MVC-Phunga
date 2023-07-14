@@ -15,6 +15,9 @@ module.exports= mongoose=>{
     },
     picture:{
         type: String
+    },
+    quantity: {
+        type: Number
     }
 
 

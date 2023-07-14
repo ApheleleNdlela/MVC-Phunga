@@ -3,7 +3,8 @@
 module.exports = app =>{
     const router = require('express').Router()
     const { authJwt } = require("../middlewares")
-    const controller = require('../controllers/cart.controller') 
+    // const controller = require('../controllers/cart.controller')
+    const controller = require("../controller/cart.controller") 
 
     app.use(async(req, res, next) => {
       res.header(
@@ -27,9 +28,9 @@ module.exports = app =>{
 
 
 
-  router.get('/items/',authJwt.verifyToken, controller.getCart)
+  router.get('/',authJwt.verifyToken, controller.getCart)
 
-  router.post('/items', authJwt.verifyToken, controller.addToCart)
+  router.post('/', authJwt.verifyToken, controller.addToCart)
    
 
  app.use('/api/cart', router);
