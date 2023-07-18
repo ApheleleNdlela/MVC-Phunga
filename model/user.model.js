@@ -9,14 +9,11 @@ const User = mongoose.model(
     username: String,
     email: String,
     password: String,
+    isAdmin: {
+        type: Boolean,
+        default: false
+    }
     
-    roles: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Role"
-        }
-    ]
-
     })
 // schemauser.method("toJSON", function() {
 //     const {_v, _id, ...object } = this.toObject();

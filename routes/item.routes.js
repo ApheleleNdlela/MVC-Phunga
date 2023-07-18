@@ -1,8 +1,9 @@
 module.exports = rs =>{
     const router = require("express").Router();
     const controller = require('../controller/item.controller')
+    const { authJwt } = require("../middlewares/index")
 
-    router.post('/', controller.create);
+    router.post('/', [authJwt.verifyToken, authJwt.isAdmin], controller.create);
     router.get('/', controller.getAll);
     router.delete('/All', controller.deleteAll);
     router.put('/:id', controller.update)
